@@ -1,0 +1,10 @@
+eduardo, 12, gothan
+maria, 15, central city
+joana, 18, corupa
+sabrina, 22, rn
+lauro, 10, pomerode
+ximbinha, 15, pien
+julio, 11, curitiba
+celso, 11, floripa
+hanna, 19, sbs
+karine, 21, sbs

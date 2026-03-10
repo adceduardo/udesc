@@ -1,0 +1,10 @@
+Caneta,1.50,100
+Lápis,0.60,300
+Borracha,0.80,230
+Régua,5.00,100
+Cola,2.50,140
+Tesoura,8.99,55
+Apontador,3.50,89
+Calculadora,2.90,367
+Estojo,5.99,94
+Mochila,99.90,30
