@@ -1,6 +1,6 @@
 with open("usuarios.txt", "r") as archive:
     print("-" * 45)
-    print(f"{"Nome":<20}{"Idade":<10}{"Cidade":<15}")
+    print(f"{'Nome':<20}{"Idade":<10}{"Cidade":<15}")
     print("-" * 45)
 
     for line in archive:
