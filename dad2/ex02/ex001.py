@@ -8,24 +8,29 @@ while True:
 
     words_to_find.append(word_to_find)
 
-ocurrences = {}
 
-with open("arquivo.txt", "r") as archive:
-    for line in archive:
-        words = line.split()
+if len(words_to_find) > 1:  
+    ocurrences = {}
 
-        for word in words_to_find:         
-            if not word in ocurrences:
-                ocurrences[word] = words.count(word)
+    for key in words_to_find:
+        ocurrences[key] = 0
 
-            else:
-                ocurrences[word] += words.count(word)
-             
+    with open("arquivo.txt", "r") as archive:
+        for line in archive:
+            words = line.split()
 
-print(ocurrences)
-   
-# if(ocurrences < 1 ):
-#     print("A palavra não foi encontrada nenhuma vez")
+            for word in words:
+                if word in words_to_find:
+                    ocurrences[word] += 1
 
-# if(ocurrences > 0):
-#     print(f"A palavra foi encontrada {ocurrences} vezes")
+    print(ocurrences)
+
+    ocurrences_sorted = sorted(ocurrences.items(), key=lambda position: position[1], reverse=True)   
+
+
+
+    print("\nOcorrência de palavras: ")
+    print(f"{'Palavra':<20}Quantidade")
+
+    for word, amount in ocurrences_sorted:
+        print(f"{word:<20}{amount}")
