@@ -1,7 +1,7 @@
 table = [None] * 11
 
 def insertKey(key):
-    h = key % 11
+    h = key % len(table)
     table[h] = key
     print(f"Elemento {key} inserido na posição {h}")
 
@@ -13,7 +13,6 @@ def findKey(table, key):
     else:
         print("Elemento não encontrado")
         
-
 while True:
     print("\n1. Inserir\n2. Buscar\n3. Imprimir tabela\n4. Sair")
     opc = int(input("\nDigite uma opção: "))
