@@ -1,6 +1,7 @@
-table = [None] * 17
+values = [113, 117, 97, 100, 114, 108, 116, 105, 99]
+table = [None] * 11
 
-def insertKey(key):
+def insertTable(key, table):
     h = key % len(table)
 
     if table[h] is None:
@@ -11,19 +12,16 @@ def insertKey(key):
         for i in range(1, len(table)):
             aux = (h+i) % len(table)
 
-            print(f"Colisão com {h}, tentando inserir em {aux}")
-        
             if table[aux] is None:
                 table[aux] = key
                 print(f"Elemento {key} inserido na posição {aux}")
                 return
-            
-        print("\nLista cheia, impossível inserir mais itens")
-        
 
-values = [120, 130, 140, 100, 101, 77, 88, 99, 47, 117, 23, 68]
+        print("Tabela cheia!")
+
 
 for v in values:
-    insertKey(v)
+    insertTable(v, table)
+
 
 print(table)

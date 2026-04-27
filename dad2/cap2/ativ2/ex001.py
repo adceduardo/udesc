@@ -1,15 +1,13 @@
 table = [None] * 11
 
-def spreadFunction(key):
+values = [54, 26, 93, 17, 77, 31]
+
+def insertFunction(key):
     hash = key % 11
     table[hash] = key
     print(f"Elemento {key} inserido na posição {hash}")
 
-spreadFunction(54)
-spreadFunction(26)
-spreadFunction(93)
-spreadFunction(17)
-spreadFunction(77)
-spreadFunction(31)
+for v in values:
+    insertFunction(v)
 
 print(table)
