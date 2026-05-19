@@ -26,14 +26,14 @@ def createInvertedList(archive, docID):
                     if not add:
                         index[formatted].append((docID, [pos]))
 
-def baseFind(index, word):
+def baseFind(word):
     if word in index:
        return index[word]
    
     return []
     
-def simpleFind(index, word):
-    output = baseFind(index, word)
+def simpleFind( word):
+    output = baseFind(word)
 
     if len(output) > 0:
         print("-"*32)
@@ -46,6 +46,32 @@ def simpleFind(index, word):
     else:
         print("Nenhuma ocorrência encontrada")
 
+def andFind(words):
+    output = []
+
+    for word in words:
+        temp = baseFind(word)
+        if len(temp) == 0:
+            print(f"Palavra {word} não encontrada no dicionário")
+            return
+        
+        else:
+            output.append(temp)
+        
+    docs = []
+    for element in output:
+        print(element)
+
+
+
+    
+    
+
+
+       
+
+
+
 ##################
 
 index = {}
@@ -53,22 +79,24 @@ docs = [doc1, doc2, doc3]
 for i, doc in enumerate(docs):
     createInvertedList(doc, i+1)
 
-
-
-
 while True:
     print("\n")
     print("-"*12, "MENU", "-"*12)
     print("1. Simples\n2. Conjuntiva\n3. Disjuntiva\n4.Sair")
 
-    opc = int(input("\nDigite qual opção de busca deseja realizar: "))
+    #opc = int(input("\nDigite qual opção de busca deseja realizar: "))
+    opc = 2
 
     if opc == 1:
         wordToFind = str(input("\nDigite qual palavra deseja buscar: "))
-        simpleFind(index, wordToFind)
+        simpleFind(wordToFind)
+        
 
     elif opc == 2:
-        pass
+        #wordToFind = str(input("\nDigite as palavras que deseja encontrar: "))
+        #wordToFind  = wordToFind.split()
+        andFind(['python', 'dados'])
+        break
 
     elif opc == 3:
         pass
